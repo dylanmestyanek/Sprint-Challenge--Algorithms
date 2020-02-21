@@ -97,14 +97,22 @@ class SortingRobot:
         Sort the robot's list.
         """
         
+        # While the robot can move right
         while self.can_move_right():
+
+            # Swap the item
             self.swap_item()
             
+            # Then check again while it can move right
             while self.can_move_right():
+                # If it can, then move right
                 self.move_right()
-
+                
+                # Check if the next item is smaller, if it is, then swap for the smaller value
                 if self.compare_item() == 1:
                     self.swap_item()
+        
+            # At this point we have the smallest value
 
         
         
