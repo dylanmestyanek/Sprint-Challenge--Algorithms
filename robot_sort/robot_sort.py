@@ -93,9 +93,6 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
-        """
-        Sort the robot's list.
-        """
         # At the beginning swap for the first item
         while self.can_move_right():
             self.swap_item()
