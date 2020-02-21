@@ -22,4 +22,20 @@ or if `bunnies = 6`:
 
 ## Exercise II
 
+- `n` is height of the building
+- `f` is the minimum floor level that an egg will break at when dropped
+- `any floor < f` will not break the egg
+- `any floor > f` will break the egg
+
+```python
+    def egg_drop(height, floor):
+        if floor <= height:
+            if floor == 0:
+                return floor
+            
+            return 1 + egg_drop(height, floor - 1)
+```
+
+This function would return an egg surviving a drop off of each floor. This run time would be O(2^n) due to the fact that the recursion calls itself until it reaches the base case (when you are on the bottom floor).
+
 
