@@ -96,8 +96,10 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        if self.can_move_right():
+            print(self.swap_item())
+            print(self.move_right())
+            print(self.compare_item())
 
 
 if __name__ == "__main__":
@@ -110,3 +112,21 @@ if __name__ == "__main__":
 
     robot.sort()
     print(robot._list)
+    
+
+# HERE'S THE BREAKDOWN FOOLS:
+''' 
+The Robot Can:
+1) CHECK if can MOVE RIGHT
+2) CHECK if can MOVE LEFT
+3) MOVE RIGHT
+4) MOVE LEFT
+5) SWAP current item for NEXT ITEM (switch indices)
+6) COMPARE values (compare list[index] values)
+
+- I want to move right through the list and compare each value
+- If the next value is smaller than the current one, swap them
+- Otherwise check if you can move right, and do so
+- If you can't move right, move left through the list until you reach the right
+- Repeat until sorted
+'''
